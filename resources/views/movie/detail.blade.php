@@ -11,8 +11,14 @@
               <h6 class="card-subtitle mb-2 text-muted">{{$movie->release_date}}</h6>
               <p class="card-text">{{$movie->viewers}}</p>
               <p class="card-text">Created {{$movie->created_at->diffForHumans()}}</p>
-              <a href="" class="btn btn-primary">Update</a>
-              <a href="" class="btn btn-danger">Delete</a>
+              <div class="d-flex">
+              <a href="/movie/{{$movie->id}}/edit" class="btn btn-primary">Update</a>
+              <form action="/movie/{{$movie->id}}/delete" method="POST">
+                @csrf
+                @method('delete')
+              <button type="submit" onclick="confirm('sure ?')" class="btn btn-danger ml-2">Delete</button>
+              </form>
+            </div>
             </div>
           </div>
     </div>

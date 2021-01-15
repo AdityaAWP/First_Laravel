@@ -20,13 +20,14 @@ Route::get('/movie', 'MovieController@index');
 Route::get('/movie/create', 'MovieController@create');
 Route::post('/movie', 'MovieController@store');
 
-Route::get('/movie/{id}/edit', 'MovieController@edit');
-Route::patch('/movie/{id}/edit', 'MovieController@update');
+Route::get('/movie/{movie}/edit', 'MovieController@edit');
+Route::patch('/movie/{movie}/edit', 'MovieController@update');
+
+Route::delete('/movie/{movie}/delete', 'MovieController@destroy');
 
 Route::get('/book', 'BookController@index');
 
-
-Route::get('/movie/{id}', 'MovieController@show');
+Route::get('/movie/{movie}', 'MovieController@show');
 
 
 

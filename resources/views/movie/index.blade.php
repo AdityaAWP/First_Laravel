@@ -19,7 +19,7 @@
             </li> 
             @endforeach
             <br>
-            <a class="btn btn-primary" href="{{url('movie/create')}}">Movie</a>
+            <a class="btn btn-primary" href="{{url('movie/create')}}">Add</a>
             <br>
             {{$movies->links()}}
         </ul>
